@@ -10,6 +10,6 @@ const router = express.Router();
 router.post('/', [authMiddleware, adminMiddleware], movieController.createMovie);
 router.put('/:id', [authMiddleware, adminMiddleware], movieController.updateMovie);
 router.delete('/:id', [authMiddleware, adminMiddleware], movieController.deleteMovie);
-router.get('/', movieController.getAllMovies);
+router.get('/',[authMiddleware], movieController.getAllMovies);
 
 export default router;

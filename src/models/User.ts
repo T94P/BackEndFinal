@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true, maxlength: 60 }
 });
 
 // Middleware que será executado antes de salvar um usuário para hash da senha

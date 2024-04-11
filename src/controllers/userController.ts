@@ -8,7 +8,7 @@ const register = async (req: Request, res: Response): Promise<Response> => {
     const { username, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 8);
 
-    const user = new User({ username, password: hashedPassword });
+    const user = new User({ username, password });
     await user.save();
 
     return res.status(201).send({ user });

@@ -24,10 +24,6 @@ app.use(bodyParser.json());
 
 
 
-// Middleware setup
-// app.use(authMiddleware);
-// app.use(adminMiddleware);
-
 app.use('/api/users', userRoutes);
 app.use('/api/movies', movieRoutes);
 
