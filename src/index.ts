@@ -1,3 +1,4 @@
+import * as path from 'path';
 import express from 'express';
 import http from 'http';
 import mongoose from 'mongoose';
@@ -21,11 +22,16 @@ app.use(cors({ credentials: true }));
 app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '..', 'FrontEnd')));
 
 
 
 app.use('/api/users', userRoutes);
 app.use('/api/movies', movieRoutes);
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'FrontEnd', 'index.html'));
+  });
 
 const PORT = process.env.PORT || 3000;
 const MONGO_URL = process.env.MONGO_URL;
