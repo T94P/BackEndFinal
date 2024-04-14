@@ -13,7 +13,7 @@ export const createMovie = async (req: Request, res: Response): Promise<Response
 
 export const getAllMovies = async (req: Request, res: Response): Promise<Response> => {
   try {
-    const movies = await Movie.find({}); // assuming you have a model called Movie
+    const movies = await Movie.find({}); 
     return res.status(200).send(movies);
   } catch (error) {
     return res.status(400).send(error);

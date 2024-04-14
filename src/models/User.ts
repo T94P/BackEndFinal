@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true, maxlength: 60 }
 });
 
-// Middleware que será executado antes de salvar um usuário para hash da senha
 userSchema.pre('save', async function(next) {
   const user = this;
   if (user.isModified('password')) {

@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(data => {
         console.log(data);
-        localStorage.setItem('token', data.token); // Store the token
+        localStorage.setItem('token', data.token); 
         alert('Login successful!');
-        window.location.href = 'index.html'; // Redirect to the home page
+        window.location.href = 'index.html'; 
       })
       .catch(error => {
         console.error('Error during login:', error);

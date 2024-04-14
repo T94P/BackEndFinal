@@ -31,7 +31,6 @@ const login = async (req: Request, res: Response): Promise<Response> => {
       return res.status(401).send({ message: 'Login failed, incorrect password.' });
     }
 
-    // Use the environment variable for the JWT secret
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET as string, { expiresIn: '24h' });
 
     return res.status(200).send({ token });

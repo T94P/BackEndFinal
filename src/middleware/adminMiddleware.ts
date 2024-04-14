@@ -1,11 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
-// Extend the Express Request type with the user property
 declare global {
   namespace Express {
     interface Request {
-      user?: any; // Replace 'any' with a more specific type if you have one
+      user?: any; 
     }
   }
 }

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(data => {
         console.log(data);
         alert('Registration successful!');
-        window.location.href = 'login.html'; // Redirect to login page
+        window.location.href = 'login.html'; 
       })
       .catch(error => {
         console.error('Error during registration:', error);
